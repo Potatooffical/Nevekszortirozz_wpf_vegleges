@@ -28,32 +28,47 @@ namespace Nevekszortirozz_wpf_végleges
 
         private void btn_nevekkiir_Click(object sender, RoutedEventArgs e)
         {
-            lb_nevekkiir.Items.Clear();
-            Nevek.Clear();
-            string Nevszovegdoboz = tbx_nevekbeir.Text;
-            string[] kecske = Nevszovegdoboz.Split(',');
-            foreach (string s in kecske)
+            if (tbx_nevekbeir.Text!="")
             {
-                Nevek.Add(s);
-                lb_nevekkiir.Items.Add(s);
+                lb_nevekkiir.Items.Clear();
+                Nevek.Clear();
+                string Nevszovegdoboz = tbx_nevekbeir.Text;
+                string[] kecske = Nevszovegdoboz.Split(',');
+                foreach (string s in kecske)
+                {
+                    Nevek.Add(s);
+                    lb_nevekkiir.Items.Add(s);
 
+                }
             }
+            else
+            {
+                MessageBox.Show("Kérem adjon meg egy nevet","Hiba",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+
 
         }
 
         private void btn_neveksorbarendez_Click(object sender, RoutedEventArgs e)
         {
-            lb_neveksorbarendez.Items.Clear();
-            Nevek.Clear();
-            string Nevszovegdoboz = tbx_nevekbeir.Text;
-            string[] kecske = Nevszovegdoboz.Split(',');
-            Array.Sort(kecske);
-            foreach (string s in kecske)
+            if (tbx_nevekbeir.Text!="")
             {
-                Nevek.Add(s);
-                lb_neveksorbarendez.Items.Add(s);
+                lb_neveksorbarendez.Items.Clear();
+                Nevek.Clear();
+                string Nevszovegdoboz = tbx_nevekbeir.Text;
+                string[] kecske = Nevszovegdoboz.Split(',');
+                Array.Sort(kecske);
+                foreach (string s in kecske)
+                {
+                    Nevek.Add(s);
+                    lb_neveksorbarendez.Items.Add(s);
+                }
+                MessageBox.Show("A név lista sorba lett rendezve :) ", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            MessageBox.Show("A név lista sorba lett rendezve :) ", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+            {
+                MessageBox.Show("Kérem adjon meg egy nevet", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
 
