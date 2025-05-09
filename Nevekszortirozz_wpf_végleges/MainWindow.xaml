@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="400">
     <Grid>
         <Label 
-             Content="Keresztnevel ',' val elválasztva " 
+             Content="Keresztnevek ',' val elválasztva " 
              HorizontalAlignment="Left"
              VerticalAlignment="Top"
              Margin="21,18,0,0"
